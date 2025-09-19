@@ -1,0 +1,392 @@
+/* =============================================================================
+   CORE STYLES (Structure, layout, typography, NO colors)
+   ============================================================================= */
+
+/* Fonts & Imports */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* CSS Custom Properties (non-color) */
+:root {
+    --width: 720px;
+    --font-main: 'IBM Plex Mono', monospace;
+    --font-secondary: 'IBM Plex Mono', monospace;
+    --font-monospace: 'IBM Plex Mono', monospace;
+    --font-scale: 1rem;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --radius-sm: 3px;
+    --radius-md: 5px;
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+    --z-dropdown: 200;
+    --z-modal: 1000;
+}
+
+/* BASE STYLES */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: var(--spacing-md);
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+}
+
+strong, b {
+    color: var(--heading-color);
+}
+
+/* LINKS */
+a, 
+a.notfound:visited,
+nav a:visited,
+small a:visited,
+footer.bottom-footer a:visited {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: none;
+}
+
+a:focus,
+a:hover,
+a.notfound:visited:hover,
+nav a:visited:hover,
+small a:visited:hover,
+footer.bottom-footer a:visited:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--visited-color);
+}
+
+/* Simplified post-title styles - removed redundant background overrides */
+a.post-title {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: none;
+}
+
+a.post-title:hover,
+a.post-title:focus {
+    text-decoration: underline;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.title h1 {
+    font-size: 1.5em;
+}
+
+/* LAYOUT COMPONENTS */
+header {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 3px dotted var(--main-color);
+}
+
+nav a {
+    margin-right: 8px;
+}
+
+main {
+    line-height: 1.6;
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+}
+
+.bottom-footer {
+    margin-top: var(--spacing-lg);
+    border-top: 3px dotted var(--main-color);
+    padding: 25px 0;
+    text-align: center;
+}
+
+.bottom-footer > div {
+    margin-bottom: 0.7em;
+}
+
+.bottom-footer > div:last-child {
+    margin-bottom: 0;
+}
+
+.footer-author span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-wrap: anywhere;
+}
+
+small a {
+    margin-right: 0.5em;
+}
+
+/* CONTENT ELEMENTS */
+hr {
+    border: 0;
+    border-top: 1px dashed var(--border-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+blockquote {
+    border-left: 1px solid var(--blockquote-color);
+    color: var(--blockquote-text-color);
+    padding-left: var(--spacing-md);
+    font-style: italic;
+}
+
+/* CODE & SYNTAX */
+code {
+    font-family: var(--font-monospace);
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: var(--radius-sm);
+}
+
+.highlight,
+.code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: var(--radius-sm);
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 6px 13px;
+    border: 1px solid var(--border-color);
+    font-size: 1em;
+}
+
+/* BLOG POST LISTINGS */
+ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+}
+
+ul.blog-posts li {
+    display: flex;
+    margin-bottom: var(--spacing-sm);
+}
+
+ul.blog-posts li span {
+    flex: 0 0 130px;
+}
+
+ul.blog-posts li a:visited {
+    color: var(--visited-color);
+}
+
+i time {
+    font-style: normal;
+    opacity: 0.7;
+}
+
+/* UTILITY CLASSES */
+.inline {
+    width: auto !important;
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* FORM ELEMENTS - Consolidated and simplified */
+input, button, textarea, select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+/* Text input styles - consolidated into one rule */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea {
+    margin: 0 0 var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--text-color);
+    background: var(--code-background-color);
+    border: 2px solid var(--link-color);
+    border-radius: var(--radius-md);
+    width: 55%;
+}
+
+textarea {
+    width: 95%;
+}
+
+/* Search input specific overrides */
+input[type="text"]#searchInput {
+    font-size: 1rem;
+    line-height: 1.5;
+    height: 24px;
+    padding: 0.5em;
+    vertical-align: middle;
+    margin-bottom:1em;
+}
+
+/* Button styles */
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    margin: 0 0 var(--spacing-md);
+    padding: 7px;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    color: var(--background-color);
+    background: var(--link-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+legend {
+    margin: var(--spacing-md) 0;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* TASK LIST IMPROVEMENTS */
+ul.task-list,
+ol.task-list {
+    list-style: none;
+    padding-inline-start: 0;
+    margin-left: 0;
+}
+
+ul.task-list > li::marker,
+ol.task-list > li::marker {
+    content: "";
+}
+
+li.task-list-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    list-style: none;
+    margin: 0 0 0.4em 0;
+    padding: 0;
+}
+
+li.task-list-item input[type="checkbox"],
+li.task-list-item .task-list-item-checkbox {
+    width: auto;
+    height: auto;
+    box-sizing: content-box;
+    padding: 0;
+    border: initial;
+    font: initial;
+    line-height: normal;
+    background: initial;
+    appearance: checkbox;
+    -webkit-appearance: checkbox;
+    margin: 0;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+/* POST NAVIGATION STYLES */
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    font-size: 1em;
+    gap: 1em;
+}
+
+.prev-post, .next-post {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* Image Gallery Styles */
+.image-gallery {
+  overflow: auto;
+  margin-left: -1%;
+}
+.image-gallery li {
+  float: left;
+  display: block;
+  margin: 0 0 1% 1%;
+  width: 250px;
+}
+.image-gallery li a {
+  text-align: center;
+  text-decoration: none;
+  color: #777;
+}
+.image-gallery li a span {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 3px 0;
+}
+.image-gallery li a img {
+  width: 100%;
+  display: block;
+}
+
+/* MOBILE ELEMENTS */
+@media (max-width: 700px) {
+    th, td {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 1px;
+    }
+    
+    .blog-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #searchInput {
+        width: 100%;
+    }
+}

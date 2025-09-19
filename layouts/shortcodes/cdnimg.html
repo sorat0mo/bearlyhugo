@@ -1,0 +1,10 @@
+{{- $useCDN := site.Params.useCDN | default false -}}
+{{- $cdn := site.Params.url_CDN | default "" -}}
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $title := .Get "title" -}}
+<img
+  src="{{ if and $useCDN $src }}{{ $cdn }}{{ $src }}{{ else }}{{ $src }}{{ end }}"
+  alt="{{ $alt }}"
+  {{ with $title }}title="{{ . }}"{{ end }}
+/>

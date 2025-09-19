@@ -1,0 +1,7 @@
+  <div class="footer-back">
+  {{ if site.Params.blog_as_home }}
+    <a href="{{ "" | relURL }}">← Back to all posts</a>
+  {{ else }}
+    <a href="{{ "blog/" | relURL }}">← Back to all posts</a>
+  {{ end }}
+  </div>

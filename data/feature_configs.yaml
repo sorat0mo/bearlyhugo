@@ -1,0 +1,22 @@
+columns:
+  - Key
+  - Description
+rows:
+  - [baseURL, "The baseurl/folder your site is located. Include the trailing slash."]
+  - [title, "The name of your site/blog."]
+  - [languageCode, "The language of your site."]
+  - [copyright, "Copyright text."]
+  - [description, "Subheader of your site. Also used for SEO."]
+  - [site_theme, "The color palette/theme you want. bear is the default. Current theme: bear, pine, sunset, geek"]
+  - [post_search, "true/false. Displays a search box in posts feed."]
+  - [blog_as_home, "This setting is a boolean (true/false). If set to true, your homepage will become the blog feed instead. If set to false, there will be a home page and a dedicated blog page for your posts. You can edit the home page’s content at `/content/index.md`."]
+  - [blog_tagline, "Some lines to display atop your posts feed."]
+  - [copyright_url, "Link to the copyright/license. Leave empty if you don’t have a link."]
+  - [fediverse_verify, "An array of url. Verify your control of the website on Fediverse. Ignore if unused."]
+  - [orig_theme_author, "Show Credits to jekyllBear’s author, knhash?"]
+  - [use_CSP, "Implement limited CSP for GitHub Pages. Set to false IF you are serving CSP Headers elsewhere (e.g. Cloudflare/Vercel/Your server)"]
+  - [useCDN, "true/false. Prepend CDN url using `cdnimg` short code?"]
+  - [url_CDN, "The CDN URL to prepend in front of image urls. Consult your CDN for this."]
+  - [author, "Your name and URL. Will be used for footer."]
+  - [giscus, "This group of settings is to be used if you want to add comments to your blog posts. Comment out all of them if you do not wish to add comments to your posts."]
+  - [menus, "More links on the header. Use `main` for webpages and files in your website. Use `special` for external links. Special links will be enclosed in `[]` brackets"]

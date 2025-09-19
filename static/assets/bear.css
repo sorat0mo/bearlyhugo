@@ -1,0 +1,33 @@
+/* =============================================================================
+   BEAR COLOR THEME
+   ============================================================================= */
+
+:root {
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --main-color: #3273dc; /* Chosen to match link color, for borders etc */
+    --code-background-color: #e0e4ea; /* Light code bg, harmonious with bear */
+    --code-color: #222; /* Match heading color for contrast */
+    --blockquote-color: #222; /* As in bear.css */
+    --blockquote-text-color: #222;
+    --border-color: #bbb; /* Soft gray for borders */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #01242e;
+        --heading-color: #eee;
+        --text-color: #ddd;
+        --link-color: #8cc2dd;
+        --visited-color: #8b6fcb;
+        --main-color: #8cc2dd; /* Match link color for borders etc */
+        --code-background-color: #011822; /* Very dark blue for code bg */
+        --code-color: #b4e88d; /* Match heading color */
+        --blockquote-color: #ccc;
+        --blockquote-text-color: #ddd;
+        --border-color: #35748d;
+    }
+}

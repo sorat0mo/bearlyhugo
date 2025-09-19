@@ -1,0 +1,25 @@
+<div class="blog-header">
+  {{ with .Site.Params.blog_tagline }}
+    {{ . }}
+  {{ end }}
+  {{ if .Site.Params.post_search }}
+    <input type="text" id="searchInput" placeholder="Search posts...">
+  {{ end }}
+</div>
+<ul class="blog-posts">
+  {{ range (sort (where .Site.RegularPages "Section" "posts") "Date" "desc") }}
+    <li>
+      <span><i>
+        <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
+          {{ .Date.Format "Jan 2, 2006" }}
+        </time>
+      </i></span>
+      <a class="post-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+  {{ end }}
+</ul>
+<small>
+  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+    <a href="{{ (print "tags/" $name | urlize ) | relURL }}" title="See all posts by {{ $name }} tag">#{{ $name }}</a>
+  {{ end }}
+</small>

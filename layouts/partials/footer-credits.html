@@ -1,0 +1,23 @@
+{{ if .Site.Params.orig_theme_author }}
+<div class="footer-credits">
+      <i><a href="https://knhash.in/jekyllBear" target="_blank" rel="noopener noreferrer">jekyllBear</a> by <a href="https://knhash.in" target="_blank" rel="noopener noreferrer">knhash</a></i>
+    </div>
+  {{ end }}
+  <div class="footer-author">
+    <span>
+    <i><a href="{{ "" | relURL }}">{{ .Site.Title }}</a> by
+  <a href="{{ with .Site.Params.author.url }}{{ . }}{{ else }}/{{ end }}"
+  {{ with .Site.Params.author.url }}target="_blank" rel="noopener noreferrer"{{ end }}>
+  {{ .Site.Params.author.name }}</a>.&nbsp;</i>
+    </span>
+    <span>
+      {{ if .Site.Params.copyright_url }}
+        <a href="{{ .Site.Params.copyright_url }}" target="_blank" rel="noopener noreferrer">{{ .Site.Copyright }}</a>
+      {{ else }}
+        {{ .Site.Params.copyright }}
+      {{ end }}
+    </span>
+    <span>
+      <a href="https://sorat0mo.github.io/bearlyhugo" target="_blank" rel="noopener noreferrer">Powered by BearlyHugo</a>
+    </span>
+  </div>

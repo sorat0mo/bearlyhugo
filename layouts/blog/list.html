@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ if not .Site.Params.blog_as_home }}
+  {{ partial "blog-feed.html" . }}
+{{ else }}
+  <meta http-equiv="refresh" content="0; url={{ "" | relURL }}">
+{{ end }}
+{{ end }}

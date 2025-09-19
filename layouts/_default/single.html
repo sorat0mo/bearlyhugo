@@ -1,0 +1,72 @@
+{{ define "main" }}
+<main>
+
+  <article>
+    {{/* 
+Priority:
+1. .Title (front matter)
+2. Name from filename (YYYY-MM-DD-Name.md)
+3. Date from filename (YYYY-MM-DD.md)
+4. .Date (post date)
+*/}}
+
+<h1>
+  {{- with .Title -}}
+    {{ . }}
+  {{- else -}}
+    {{- $basename := .File.BaseFileName -}}
+    {{- $name := $basename | replaceRE `^\d{4}-\d{2}-\d{2}-` "" -}}
+    {{- if $name -}}
+      {{- if ne $name $basename -}}
+        {{ $name | humanize | title }}
+      {{- else -}}
+        {{- /* No name part, try to extract date from filename */ -}}
+        {{- $date := $basename | replaceRE `^(\d{4}-\d{2}-\d{2}).*` "$1" -}}
+        {{- if ne $date $basename -}}
+          {{ $date }}
+        {{- else -}}
+          {{- /* Fallback to .Date */ -}}
+          {{ .Date.Format "2006-01-02" }}
+        {{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{ .Date.Format "2006-01-02" }}
+    {{- end -}}
+  {{- end -}}
+</h1>
+    {{ if eq .Section "posts" }}
+      <i>{{ .Date.Format "Jan 2, 2006" }}</i>
+    {{ end }}
+    {{ with .Params.subtitle }}
+      <h4 class="subtitle">{{ . }}</h4>
+    {{ end }}
+
+    {{ .Content }}
+
+    {{ with .Params.tags }}
+      <small>
+        {{ range . }}
+          <a href="{{ "tags/" | relURL }}{{ . }}">#{{ . }}</a>
+        {{ end }}
+      </small>
+    {{ end }}
+
+{{ if and (eq .Section "posts") (or .PrevInSection .NextInSection) }}
+  <nav class="post-nav">
+    {{ with .PrevInSection }}
+      <a class="prev-post" href="{{ .RelPermalink }}">← {{ .Title }}</a>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a class="next-post" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+    {{ end }}
+  </nav>
+{{ end }}
+
+    {{/* Comments section (Giscus) if enabled */}}
+    {{ if and (eq .Section "posts") (not (isset .Params "comments") | or .Params.comments) }}
+      {{ partial "comments.html" . }}
+    {{ end }}
+  </article>
+  
+</main>
+{{ end }}

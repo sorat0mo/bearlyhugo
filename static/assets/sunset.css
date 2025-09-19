@@ -1,0 +1,33 @@
+/* =============================================================================
+   SUNSET COLOR THEME
+   ============================================================================= */
+
+:root {
+    --background-color: #fff8f2; /* Soft sunset cream */
+    --heading-color: #a23a1a; /* Deep sunset rust */
+    --text-color: #36261a; /* Warm sunset brown */
+    --link-color: #e87d24; /* Pumpkin orange */
+    --visited-color: #b34713; /* Burnt orange */
+    --main-color: #e25822; /* Sunset orange */
+    --code-background-color: #fff0e0; /* Pale peach */
+    --code-color: #a23a1a; /* Deep sunset rust */
+    --blockquote-color: #b97b5a; /* Muted sunset brown */
+    --blockquote-text-color: #e09a5b; /* Muted orange */
+    --border-color: var(--blockquote-color);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #2d1910; /* Deep sunset night */
+        --heading-color: #ffd6b3; /* Pale apricot */
+        --text-color: #fff8f2; /* Creamy white */
+        --link-color: #ffae6b; /* Soft gold */
+        --visited-color: #ff944d; /* Vibrant sunset */
+        --main-color: #ff944d; /* Vibrant sunset */
+        --code-background-color: #3d261a; /* Warm dusk brown */
+        --code-color: #ffd6b3; /* Pale apricot */
+        --blockquote-color: #ebbc8c; /* Muted golden tan */
+        --blockquote-text-color: #ffd6b3; /* Pale Apricot */
+        --border-color: var(--blockquote-color);
+    }
+}

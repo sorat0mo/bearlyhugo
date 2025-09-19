@@ -1,0 +1,17 @@
+/* =============================================================================
+   GEEK TERMINAL COLOR THEME
+   ============================================================================= */
+
+:root {
+    --background-color: #000000;         /* Pure black */
+    --heading-color: #39ff14;            /* Neon green */
+    --text-color: #00ff00;               /* Bright green */
+    --link-color: #ffffff;               /* White links for max visibility */
+    --visited-color: #c678dd;            /* Vibrant Purple */
+    --main-color: #00ff00;               /* Terminal green */
+    --code-background-color: #181818;    /* Code block dark */
+    --code-color: #ffffff;               /* Just white */
+    --blockquote-color: #111111;         /* Extra dark */
+    --blockquote-text-color: #39ff14;
+    --border-color: var(--blockquote-color);
+}

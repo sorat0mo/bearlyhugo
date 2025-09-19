@@ -1,0 +1,37 @@
+{{ partial "head.html" . }}
+
+<main>
+    {{ partial "header.html" . }}
+
+    <p>
+        Here be writings, tagged as <b>"{{ .Title }}"</b>.<br>
+        <small>
+          <a href="{{ if .Site.Params.blog_as_home }}{{ "" | relURL }}{{ else }}{{ "blog/" | relURL }}{{ end }}">Remove filter</a>
+        </small>
+    </p>
+
+    {{ if .Data.Pages }}
+    <ul class="blog-posts">
+        {{ range .Data.Pages.ByDate.Reverse }}
+        <li>
+            <span>
+                <i>
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" pubdate>
+                        {{ .Date.Format "Jan 2, 2006" }}
+                    </time>
+                </i>
+            </span>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ else }}
+    <p>
+        There are no posts in {{ .Title }}.
+    </p>
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+</main>
+</body>
+</html>

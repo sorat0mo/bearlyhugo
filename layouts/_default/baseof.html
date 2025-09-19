@@ -1,0 +1,22 @@
+{{/* layouts/_default/baseof.html */}}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <main>
+    {{ partial "header.html" . }}
+
+    {{ block "main" . }}{{ end }}
+
+  </main>
+  
+  {{ if and (eq .Kind "page") (eq .Section "posts") }}
+    {{ partial "footer-post.html" . }}
+  {{ else }}
+    {{ partial "footer.html" . }}
+  {{ end }}
+
+</body>
+</html>

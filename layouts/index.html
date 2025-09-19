@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ if .Site.Params.blog_as_home }}
+  {{ partial "blog-feed.html" . }}
+{{ else }}
+  {{ .Content }}
+{{ end }}
+{{ end }}

@@ -1,0 +1,91 @@
+#####################
+### Hugo Settings ###
+#####################
+
+baseURL = "https://sorat0mo.github.io/bearlyhugo/" # basehostname
+title = "BearlyHugo"
+languageCode = "en-us"
+copyright = "Some rights reserved"
+timeZone = "Asia/Hong_Kong"
+
+#####################
+## Custom Settings ##
+#####################
+
+[params]
+  description = "A beary cool theme for Hugo"
+  site_theme = "bear"
+  post_search = true
+  blog_as_home = false
+  blog_tagline = "Paws, claws, and thoughts—notes from a bear’s den."
+  copyright_url = "https://opensource.org/licenses/MIT"
+  fediverse_verify = [""] # ["https://example.com/@acme", "https://example.org/@acme"]
+  orig_theme_author = false
+  use_CSP = false
+  useCDN = false
+  url_CDN = "https://cdn.statically.io/img/"
+  
+[menus]
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 10
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 20
+  [[menus.special]]
+    name = "GitHub"
+    url = "https://github.com/sorat0mo"
+  
+[params.author]
+  name = "Karsten"
+  url = "https://karsten.ws"
+  
+[params.giscus]
+  hostname = "giscus.app"
+  repo = "sorat0mo/bearlyhugo"
+  repo_id = "R_kgDOPvqyIg"
+  category_name = "General"
+  category_id = "DIC_kwDOPvqyIs4CvbsT"
+  mapping = "pathname"
+  reactions_enabled = 0
+  theme = "fro"
+  strict = 0
+  input_position = "top"
+  emit_metadata = 0
+  lang = "en"
+  lazy = true
+
+#####################
+### Misc Settings ###
+#####################
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  
+# Permalink settings for posts
+[permalinks]
+  posts = "/:year-:month-:day-:title"
+
+[frontmatter]
+  date = [":filename", ":default", ":fileModTime"]
+
+# Force markup to use CSS classes
+[markup]
+  [markup.highlight]
+    style = "monokai" # Or your theme
+    noClasses = false # Use CSS classes, not inline styles
+
+# Ignore files/folders (Hugo ignores dotfiles and non-content by default)
+ignoreFiles = ["README.md", "LICENSE.txt"]
+
+# Disable uglyurls for pretty URLs (default in Hugo)
+uglyURLs = false
+
+# --- EOF ---
