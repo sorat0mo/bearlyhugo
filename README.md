@@ -2,7 +2,7 @@
 
 [BearlyHugo](https://github.com/sorat0mo/bearlyhugo) imitates the very popular [Bear Blog](https://bearblog.dev/). It is a blogging platform that focuses on *your words*. **No ads, no tracking, almost no scripts.** It's also tiny and has a small footprint, which makes it suitable for free and budget hosts. With Hugo, you can focus on writing your posts, let the engine do the rest for you.
 
-I ported my own [BearlyJekyll](https://github.com/sorat0mo/bearlyjekyll) to use with the Hugo SSG. See a [Demo site](https://cats.karsten.ws).
+I ported my own [BearlyJekyll](https://github.com/sorat0mo/bearlyjekyll) to use with the Hugo SSG.
 
 This theme is a modification of [jekyllBear](https://github.com/knhash/jekyllBear/) by [knhash](https://knhash.in/).
 
